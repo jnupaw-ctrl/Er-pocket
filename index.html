@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ER Pocket</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#121212;
+    color:white;
+    margin:20px;
+}
+
+.card{
+    background:#1e1e1e;
+    padding:20px;
+    border-radius:15px;
+    max-width:500px;
+    margin:auto;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    font-size:20px;
+    margin:10px 0;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    font-size:18px;
+    background:#1e88e5;
+    color:white;
+    border:none;
+    border-radius:10px;
+}
+
+.result{
+    margin-top:20px;
+    font-size:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🩺 ER Pocket</h1>
+
+<p>Weight (kg)</p>
+
+<input type="number" id="weight">
+
+<button onclick="calculate()">
+Calculate RSI
+</button>
+
+<div class="result" id="result"></div>
+
+</div>
+
+<script>
+
+function calculate(){
+
+let w=Number(document.getElementById("weight").value);
+
+document.getElementById("result").innerHTML=
+
+`
+<h3>RSI Dose</h3>
+
+Fentanyl:
+${w}-${w*3} mcg
+
+<br><br>
+
+Etomidate:
+${(w*0.3).toFixed(1)} mg
+
+<br><br>
+
+Ketamine:
+${w}-${w*2} mg
+
+<br><br>
+
+Propofol:
+${w}-${w*2} mg
+
+<br><br>
+
+Succinylcholine:
+${(w*1.5).toFixed(0)} mg
+
+<br><br>
+
+Rocuronium:
+${(w*1.2).toFixed(0)} mg
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>
